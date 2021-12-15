@@ -14,10 +14,18 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Row>
-                <Button onClick={() => changePage("01-basic")} type="primary">
+                <Button
+                    shape="round"
+                    onClick={() => changePage("01-basic")}
+                    type="primary"
+                >
                     Basic Class Component
                 </Button>
-                <Button onClick={() => changePage("state")} type="primary">
+                <Button
+                    shape="round"
+                    onClick={() => changePage("02-state")}
+                    type="primary"
+                >
                     State in Class component
                 </Button>
             </Row>

@@ -28,6 +28,13 @@ export default function Home() {
                 >
                     State in Class component
                 </Button>
+                <Button
+                    shape="round"
+                    onClick={() => changePage("03-life-cycle")}
+                    type="primary"
+                >
+                    Life Cycle in Class component
+                </Button>
             </Row>
         </div>
     );

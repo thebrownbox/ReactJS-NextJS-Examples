@@ -1,37 +1,33 @@
 import { Button, Input } from "antd";
 import React from "react";
 import "antd/dist/antd.css";
+import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 
 class StatePage extends React.Component {
-    constructor() {
-        super();
+    //! 0. The props will be in the constructor's parameter
+    constructor(props) {
+        super(props);
 
         //! 1. In class component already have a state property to store data
         this.state = {
-            myNumber: 0,
+            myAge: 0,
             myName: "",
         };
     }
 
     handleTextInput(newValue) {
-        console.log({ newValue });
-        console.log("this: " + this);
+        console.log(this);
 
-        //! this.setState function has to return a new object with the updated fields
-        this.setState((prevState, props) => {
-            console.log({ prevState });
-            console.log({ props });
-            return {
-                myName: newValue,
-            };
-        });
+        //! 2.1 Using this.setState function to update state's properties
+        this.setState({ myName: newValue });
     }
 
     handleAddNumber(offsetValue) {
-        this.setState((prev, prop) => {
+        console.log(this);
+        //! 2.2 Or using a arrow function to access previous state.
+        this.setState((prev) => {
             return {
-                ...prev,
-                myNumber: prev.myNumber + offsetValue,
+                myAge: prev.myAge + offsetValue,
             };
         });
     }
@@ -46,20 +42,20 @@ class StatePage extends React.Component {
                     onChange={(e) => this.handleTextInput(e.target.value)}
                     placeholder="Insert your name"
                 />
+                  <div>Your age is: {this.state.myAge}</div>
                 <Button
                     type="primary"
                     shape="round"
                     onClick={() => this.handleAddNumber(-1)}
                 >
-                    -
+                    <MinusOutlined />
                 </Button>
-                <span style={{ margin: 20 }}> {this.state.myNumber}</span>
                 <Button
                     type="primary"
                     shape="round"
                     onClick={() => this.handleAddNumber(1)}
                 >
-                    +
+                    <PlusOutlined />
                 </Button>
             </div>
         );

@@ -35,6 +35,13 @@ export default function Home() {
                 >
                     Life Cycle in Class component
                 </Button>
+                <Button
+                    shape="round"
+                    onClick={() => changePage("04-pass-data-to-children")}
+                    type="primary"
+                >
+                    Passing data to children
+                </Button>
             </Row>
         </div>
     );

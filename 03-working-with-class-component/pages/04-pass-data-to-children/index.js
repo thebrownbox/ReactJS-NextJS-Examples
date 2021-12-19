@@ -26,6 +26,7 @@ export default class PassingDataPage extends React.Component {
                     defaultValue={this.state.myValue}
                 />
                 <div>[Parent] This is my state value: {this.state.myValue}</div>
+                {/* //! Passing a changing state to a prop of child component */}
                 <DisplayTextChildComponent displayValue={this.state.myValue} />
             </>
         );
